@@ -10,10 +10,11 @@
           <div>
             <p><%= micropost.content %></p>
           </div>
-          <div>
+          <div class="d-flex justify-content-start align-items-center my-2">
             <% if current_user == micropost.user %>
-              <%= button_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm' %>
+              <%= button_to "Delete", micropost, method: :delete, data: { confirm: "You sure?" }, class: 'btn btn-danger btn-sm me-2' %>
             <% end %>
+            <%= render 'favorites/favorite_button', micropost: micropost %>
           </div>
         </div>
       </li>
